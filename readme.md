@@ -1,3 +1,17 @@
+How to install
+
+1. git clone this repository to your project path.
+
+2. In the root of the project run command: $ composer install.
+
+3. In the file .env configure your database.
+
+4. In the root of the project run command: $  php artisan migrate --seed
+
+5. Open project in your browser (entrypoint of the project: /public/index.php )
+
+
+
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
 <p align="center">
