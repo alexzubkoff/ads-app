@@ -61,6 +61,9 @@
                                     </form>
                                 </div>
                             </li>
+                                <li>
+                                    <a href="{{ route('list_drafts') }}">Drafts</a>
+                                </li>
                         @endguest
                     </ul>
                 </div>
