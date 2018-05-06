@@ -16,7 +16,7 @@
                                     <div class="thumbnail">
                                         <div class="caption">
                                             <h3><a href="{{ route('show_ad', ['id' => $ad->id]) }}">{{ $ad->title }}</a></h3>
-                                            <p>{{ str_limit($ad->body, 50) }}</p>
+                                            <p>{{ str_limit($ad->description, 50) }}</p>
                                             <p>
                                                 @can('publish-ad')
                                                     <a href="{{ route('publish_ad', ['id' => $ad->id]) }}" class="btn btn-sm btn-default" role="button">Publish</a>

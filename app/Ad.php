@@ -6,6 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Ad extends Model
 {
+    protected $perPage = 5;
+
     protected $fillable = [
         'title',
         'slug',
