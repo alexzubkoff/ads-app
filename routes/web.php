@@ -43,4 +43,7 @@ Route::group(['prefix' => 'ads'], function () {
     Route::get('/publish/{ad}', 'AdController@publish')
         ->name('publish_ad')
         ->middleware('can:publish-ad');
+    Route::get('/delete/{ad}', 'AdController@delete')
+        ->name('delete_ad')
+        ->middleware('can:delete-ad');
 });

@@ -22,7 +22,7 @@ class Ad extends Model
 
     public function scopePublished($query)
     {
-        return $query->where('published', true);
+        return $query->where('published', false);
     }
 
     public function scopeUnpublished($query)

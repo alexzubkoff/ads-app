@@ -25,6 +25,11 @@
                                                     <a href="{{ route('edit_ad', ['id' => $ad->id]) }}" class="btn btn-sm btn-default" role="button">Edit</a>
                                                 </p>
                                             @endcan
+                                            @can('delete-ad', $ad)
+                                                <p>
+                                                    <a href="{{ route('delete_ad', ['id' => $ad->id]) }}" class="btn btn-sm btn-default" role="button">Delete</a>
+                                                </p>
+                                           @endcan
                                         </div>
                                     </div>
                                 </div>

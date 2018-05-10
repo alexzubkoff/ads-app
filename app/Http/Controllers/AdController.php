@@ -7,7 +7,7 @@ use App\Ad;
 use App\Http\Requests\StoreAd as StoreAdRequest;
 use Auth;
 use Gate;
-use App\Http\Requests\UpdaAd as UpdateAdRequest;
+use App\Http\Requests\UpdateAd as UpdateAdRequest;
 
 class AdController extends Controller
 {
@@ -24,10 +24,12 @@ class AdController extends Controller
 
     public function store(StoreAdRequest $request)
     {
+
         $data = $request->only('title', 'description');
         $data['slug'] = str_slug($data['title']);
         $data['user_id'] = Auth::user()->id;
         $ad = Ad::create($data);
+
         return redirect()->route('edit_ad', ['id' => $ad->id]);
     }
 
@@ -64,6 +66,13 @@ class AdController extends Controller
     public function show($id)
     {
         $ad = Ad::published()->findOrFail($id);
+        return view('ads.show', compact('ad'));
+    }
+
+    public function delete($id)
+    {
+        $ad = Ad::published()->findOrFail($id);
+        $ad->delete();
         return view('ads.show', compact('ad'));
     }
 

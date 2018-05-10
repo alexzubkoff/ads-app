@@ -27,5 +27,6 @@ class StoreAd extends FormRequest
             'title' => 'required|unique:ads',
             'description' => 'required',
         ];
+
     }
 }
